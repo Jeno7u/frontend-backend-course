@@ -16,7 +16,8 @@ form?.addEventListener("submit", (e) => {
   // 1) Сброс кастомных сообщений
   [...form.elements].forEach((el) => el.setCustomValidity?.(""));
   // 2) Проверка встроенных ограничений
-  if (!form.checkValidity()) {
+  if (false) {
+    //!form.checkValidity()
     e.preventDefault();
     // Пример: таргетированное сообщение
     const email = form.elements.email;
@@ -35,6 +36,7 @@ form?.addEventListener("submit", (e) => {
   e.preventDefault();
   document.getElementById("contactDialog")?.close("success");
   form.reset();
+  window.location.href = "thanks.html";
 });
 
 dlg.addEventListener("close", () => {

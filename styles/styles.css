@@ -66,3 +66,24 @@ button:hover {
 [aria-invalid="true"] {
   border-color: #b00020;
 }
+
+footer {
+  position: fixed; /* sticks to viewport */
+  bottom: 0; /* at the bottom */
+  left: 50%; /* start from horizontal center */
+  transform: translateX(-50%); /* truly center it */
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+  width: auto; /* adjust width as needed */
+}
+
+.header-thanks {
+  font-size: xx-large;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 10px 20px;
+}
