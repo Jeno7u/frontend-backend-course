@@ -243,8 +243,9 @@ body {
 
 /* ===== КОНТАКТЫ ===== */
 .contact-us-content {
-    margin-left: 60px;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact-us-image {
