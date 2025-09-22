@@ -1,55 +1,69 @@
 <!DOCTYPE html>
 <html lamg="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Семестровая работа</title>
-  </head>
-  <body>
-    <div id="header">Хэдер</div>
-    <div id="menu">
-      <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="news.html">Новости</a></li>
-        <li><a href="goods.html">Товары</a></li>
-        <li><a href="contacts.html">Контакты</a></li>
-      </ul>
-    </div>
-    <div id="content">
-      <div class="product">
-        <img
-          src="../assets/table.png"
-          alt="Изображение товара"
-          width="512px"
-          ,
-          height="512px"
-        />
-        <p>435₽</p>
-        <p>Очень классный стол</p>
-      </div>
-      <div class="product">
-        <img
-          src="../assets/chair.png"
-          alt="Изображение товара"
-          width="512px"
-          ,
-          height="512px"
-        />
-        <p>435₽</p>
-        <p>Очень классный стул</p>
-      </div>
-      <div class="product">
-        <img
-          src="../assets/typewriter.jpg"
-          alt="Изображение товара"
-          width="512px"
-          ,
-          height="512px"
-        />
-        <p>435₽</p>
-        <p>Очень классная печатная машинка</p>
-      </div>
-    </div>
-    <div id="footer">Футер</div>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles/styles.css" />
+        <title>Семестровая работа</title>
+    </head>
+    <body>
+        <div class="header">Хэдер</div>
+        <div class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="news.html">Новости</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="goods.html">Товары</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </div>
+        <div class="content goods-content">
+            <div class="goods-container">
+                <div class="goods-item">
+                    <img
+                        class="goods-image"
+                        src="../assets/table.png"
+                        alt="Изображение товара"
+                        width="512px"
+                        ,
+                        height="512px"
+                    />
+                    <p class="goods-price">435₽</p>
+                    <p>Очень классная печатная машинка</p>
+                </div>
+                <div class="goods-item">
+                    <img
+                        class="goods-image"
+                        src="../assets/chair.png"
+                        alt="Изображение товара"
+                        width="512px"
+                        ,
+                        height="512px"
+                    />
+                    <p class="goods-price">435₽</p>
+                    <p>Очень классная печатная машинка</p>
+                </div>
+                <div class="goods-item">
+                    <img
+                        class="goods-image"
+                        src="../assets/typewriter.jpg"
+                        alt="Изображение товара"
+                        width="512px"
+                        ,
+                        height="512px"
+                    />
+                    <p class="goods-price">435₽</p>
+                    <p>Очень классная печатная машинка</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Футер</div>
+    </body>
 </html>
