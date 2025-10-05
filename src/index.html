@@ -7,73 +7,80 @@
         <title>Семестровая работа</title>
     </head>
     <body>
-        <div class="header">Хэдер</div>
-        <div class="nav">
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Главная</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="news.html">Новости</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="goods.html">Товары</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contacts.html">Контакты</a>
-                </li>
-            </ul>
-        </div>
-        <div class="content">
-            <div class="profile-header">
-                <h1 class="profile-title">Информация об авторе</h1>
-                <img
-                    class="profile-photo"
-                    src="../assets/ayanami.png"
-                    alt="Фото автора"
-                    width="400"
-                    height="300"
-                />
-                <h2 class="profile-name">Миронов Борис Константинович</h2>
-                <h2 class="profile-group">ЭФБО-16-24</h2>
-            </div>
+        <div class="page-container">
+            <header class="header">Хэдер</header>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">Новости</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="goods.html">Товары</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <main class="content">
+                <article class="profile-header">
+                    <h1 class="profile-title">Информация об авторе</h1>
+                    <img
+                        class="profile-photo"
+                        src="../assets/ayanami.png"
+                        alt="Фото автора"
+                        width="400"
+                        height="300"
+                    />
+                    <h2 class="profile-name">Миронов Борис Константинович</h2>
+                    <h2 class="profile-group">ЭФБО-16-24</h2>
+                </article>
 
-            <div class="about-me">
-                <p>
-                    Обо мне: Я родился в Москве в 70-м на краю города. Глупость
-                    рано ударила в голову. В четыре активно ругался. Потом
-                    школа, форма, драки, клей. Так я становился сильней. Воровал
-                    деньги в раздевалке.
-                </p>
-            </div>
-
-            <div class="skill-container">
-                <div class="skill-tag">Навык 1</div>
-                <div class="skill-tag">Навык 2</div>
-                <div class="skill-tag">Навык 3</div>
-                <div class="skill-tag">Навык 4</div>
-            </div>
-
-            <div class="experience-section">
-                <h2 class="section-title">Мой опыт работы:</h2>
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 1</h3>
-                    <p class="experience-desc">
-                        Работал фантазёром. Сочинял и праздновал.
+                <section class="about-me">
+                    <h2>Мои навыки</h2>
+                    <p>
+                        Обо мне: Я родился в Москве в 70-м на краю города.
+                        Глупость рано ударила в голову. В четыре активно
+                        ругался. Потом школа, форма, драки, клей. Так я
+                        становился сильней. Воровал деньги в раздевалке.
                     </p>
-                </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 2</h3>
-                    <p class="experience-desc">
-                        Работал воровством. Воровал и продавал.
-                    </p>
-                </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 3</h3>
-                    <p class="experience-desc">Работал рэпером. Читал и пел.</p>
-                </div>
-            </div>
+                </section>
+
+                <section class="skill-grid">
+                    <div class="skill-tag">Навык 1</div>
+                    <div class="skill-tag">Навык 2</div>
+                    <div class="skill-tag">Навык 3</div>
+                    <div class="skill-tag">Навык 4</div>
+                </section>
+
+                <section class="experience-section">
+                    <h2 class="section-title">Мой опыт работы:</h2>
+                    <div class="experience-grid">
+                        <article class="experience-card">
+                            <h3 class="experience-title">Опыт 1</h3>
+                            <p class="experience-desc">
+                                Работал фантазёром. Сочинял и праздновал.
+                            </p>
+                        </article>
+                        <article class="experience-card">
+                            <h3 class="experience-title">Опыт 2</h3>
+                            <p class="experience-desc">
+                                Работал воровством. Воровал и продавал.
+                            </p>
+                        </article>
+                        <article class="experience-card">
+                            <h3 class="experience-title">Опыт 3</h3>
+                            <p class="experience-desc">
+                                Работал рэпером. Читал и пел.
+                            </p>
+                        </article>
+                    </div>
+                </section>
+            </main>
         </div>
-        <div class="footer">Футер</div>
+        <footer class="footer">Футер</footer>
     </body>
 </html>
