@@ -1,7 +1,7 @@
-# Frontend and Backend course test 1
+# Frontend and Backend course
 
-Respository that was created as result of first test in frontend and backend course
+This repository was created to show my work during this course
 
 # Links
 
-[GitHub Pages](https://jeno7u.github.io/frontend-backend-test-1/src/contacts.html)
+[GitHub Pages](https://jeno7u.github.io/frontend-backend-cource/src/index.html)

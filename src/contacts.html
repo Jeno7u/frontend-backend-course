@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lamg="ru">
+<html lang="ru">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../styles/styles.css" />
         <title>Семестровая работа</title>
+        <script src="../scripts/main.js" defer></script>
     </head>
     <body>
         <header class="header">Хэдер</header>
@@ -26,19 +27,18 @@
         </nav>
         <main class="content">
             <div class="content contact-us-content">
-                <img class="contact-us-image" src="../assets/contact-us.jpeg" alt="Изображение свяжитесь с нами">
-
+                <img
+                    class="contact-us-image"
+                    src="../assets/contact-us.jpeg"
+                    alt="Изображение свяжитесь с нами"
+                />
+                <button
+                    class="contact-us-button"
+                    onclick="contactModal.showModal()"
+                >
+                    Связаться с нами
+                </button>
                 <div class="contact-us-container">
-                    <h1 class="contact-us-header">Свяжитесь с нами</h1>
-
-                    <div class="contact-us-form-container">
-                        <div class="contact-us-form">
-                            <input class="contact-us-input" type="text" placeholder="Имя">
-                            <input class="contact-us-input" type="text" placeholder="E-mail">
-                            <input class="contact-us-input" type="text" placeholder="Ваше сообщение">
-                            <button class="contact-us-button">Позвонить нам</button>
-                        </div>
-
                     <div class="contact-us-contacts">
                         <div class="contact-us-contacts-email">
                             <h3 class="contact-us-contacts-header">Контакты</h3>
@@ -46,12 +46,99 @@
                         </div>
 
                         <div class="contact-us-contacts-address">
-                            <h3 class="contact-us-contacts-address-header">Адрес</h3>
+                            <h3 class="contact-us-contacts-address-header">
+                                Адрес
+                            </h3>
                             <p>г.Москва, ул.Колотушкина, д.22</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <dialog id="contactModal">
+                <div class="modal-header">
+                    <h2>Форма обратной связи</h2>
+                </div>
+
+                <div class="modal-content">
+                    <form id="feedbackForm" method="dialog">
+                        <div class="form-group">
+                            <label for="name"
+                                >Имя <span class="required">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Введите ваше имя"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone"
+                                >Телефон <span class="required">* </span></label
+                            >
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+7 (XXX) XXX-XX-XX"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="email"
+                                >Электронная почта
+                                <span class="required">*</span></label
+                            >
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="example@mail.ru"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Категория обращения</label>
+                            <select id="category" name="category" required>
+                                <option value="">Выберите категорию</option>
+                                <option value="technical">
+                                    Техническая поддержка
+                                </option>
+                                <option value="commercial">
+                                    Коммерческое предложение
+                                </option>
+                                <option value="cooperation">
+                                    Сотрудничество
+                                </option>
+                                <option value="complaint">Жалоба</option>
+                                <option value="suggestion">Предложение</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Текст обращения</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Опишите вашу проблему или вопрос..."
+                            ></textarea>
+                        </div>
+                        <div class="modal-actions">
+                            <!-- Кнопка отмены с автоматическим закрытием через
+                            form method="dialog" -->
+                            <button type="submit" class="btn btn-secondary">
+                                Отмена
+                            </button>
+                            <!-- Кнопка отправки с обработкой через JavaScript -->
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                                onclick="submitForm()"
+                            >
+                                Отправить
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </dialog>
         </main>
         <footer class="footer">Футер</footer>
     </body>
