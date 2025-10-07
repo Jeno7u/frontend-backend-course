@@ -1,0 +1,120 @@
+/* ===== ГЛАВНАЯ СТРАНИЦА ===== */
+
+:root {
+    --color-grad-main-one: #f8f9fa;
+    --color-grad-main-two: #e9ecef;
+
+    --color-grad-skill-one: #4facfe;
+    --color-grad-skill-two: #00f2fe;
+    --color-shadow: rgba(79, 172, 254, 0.3);
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.profile-title {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+.profile-photo {
+    width: 220px;
+    height: 280px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin: 20px auto;
+    border: 4px solid #667eea;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+.profile-name {
+    font-size: 24px;
+    color: #2c3e50;
+    margin: 10px 0;
+    font-weight: 500;
+}
+.profile-group {
+    font-size: 18px;
+    color: #7f8c8d;
+    margin: 5px 0;
+}
+.about-me {
+    background: linear-gradient(
+        135deg,
+        var(--color-grad-main-one) 0%,
+        var(--color-grad-main-two) 100%
+    );
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
+    border-left: 5px solid var(--color-grad-content-two);
+    font-size: 16px;
+    line-height: 1.8;
+}
+/* ===== НАВЫКИ ===== */
+/* ИЗМЕНЕНИЕ: Добавили CSS Grid для навыков */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+.skill-tag {
+    background: linear-gradient(
+        135deg,
+        var(--color-grad-skill-one) 0%,
+        var(--color-grad-skill-two) 100%
+    );
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 4px 15px;
+    transition: all 0.3s ease;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.skill-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--color-shadow);
+}
+/* ===== ОПЫТ РАБОТЫ ===== */
+.experience-section {
+    margin-top: 50px;
+}
+.section-title {
+    font-size: 28px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.experience-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px var(--color-shadow);
+    border-left: 4px solid #667eea;
+    transition: transform 0.3s ease;
+}
+.experience-card:hover {
+    transform: translateX(5px);
+}
+.experience-title {
+    font-size: 20px;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+.experience-desc {
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin: 0;
+}

@@ -1,0 +1,62 @@
+/* ===== ТОВАРЫ ===== */
+.goods-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+    justify-items: center;
+    padding: 32px 24px;
+}
+
+.goods-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+    border: 10px solid rgb(14, 40, 60);
+    border-radius: 20px;
+    background-color: white;
+}
+
+.goods-image {
+    display: block;
+    border-radius: 10px;
+    margin: 0 auto 18px auto;
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
+
+.goods-price {
+    color: rgb(252, 25, 120);
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 0px;
+}
+
+.goods-description {
+    font-size: 1em;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .goods-container {
+        grid-template-columns: 1fr;
+        padding: 12px; /* все карточки в столбик */
+    }
+
+    .goods-card {
+        flex: 1 0 100%; /* ширина 100% */
+    }
+
+    .goods-price {
+        font-size: 1em;
+        margin-bottom: 0px; /* текст подстраивается */
+    }
+
+    .goods-description {
+        font-size: 0.9em;
+    }
+}

@@ -1,0 +1,210 @@
+/* ===== КОНТАКТЫ ===== */
+.contact-us-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.contact-us-image {
+    width: 600px;
+    max-width: 100%;
+    border-radius: 18px;
+    object-fit: cover;
+}
+.contact-us-form-container {
+    flex: 1;
+    min-width: 260px;
+    max-width: 420px;
+}
+.contact-us-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+.contact-us-input {
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.contact-us-button {
+    width: 30vw;
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 8px;
+    background: #667eea;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.contact-us-button:hover {
+    background: #4f5bd5;
+}
+.contact-us-contacts {
+    margin-top: 24px;
+}
+@media (max-width: 992px) {
+    .contact-us-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding: 24px 8px;
+    }
+    .contact-us-image {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 18px;
+    }
+}
+@media (max-width: 600px) {
+    .contact-us-content {
+        padding: 8px 2px;
+        gap: 12px;
+    }
+    .contact-us-image {
+        width: 100%;
+        max-width: 220px;
+    }
+    .contact-us-form-container {
+        max-width: 100%;
+        min-width: 0;
+    }
+    .contact-us-form {
+        gap: 10px;
+    }
+}
+
+/* Стили для модального окна */
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.3s ease;
+}
+dialog {
+    border: none;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+    max-width: 500px;
+    width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+.modal-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px 12px 0 0;
+    margin: 0;
+}
+.modal-header h2 {
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+}
+.modal-content {
+    padding: 2rem;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+.btn-secondary {
+    background: #f8f9fa;
+    color: #2c3e50;
+    border: 2px solid #e9ecef;
+}
+.btn-secondary:hover {
+    background: #e9ecef;
+}
+.required {
+    color: #e74c3c;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+/* Адаптивность */
+@media (max-width: 600px) {
+    dialog {
+        margin: 1rem;
+        width: calc(100vw - 2rem);
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

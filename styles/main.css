@@ -1,0 +1,101 @@
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+
+:root {
+    --color-grad-content-one: #2c3e50;
+    --color-grad-content-two: #667eea;
+
+    --color-grad-header-footer-one: #2c3e50;
+    --color-grad-header-footer-two: #34495e;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(
+        135deg,
+        var(--color-grad-content-one) 0%,
+        var(--color-grad-content-two) 100%
+    );
+    min-height: 100vh;
+}
+/* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+}
+/* ===== ШАПКА ===== */
+.header {
+    background: linear-gradient(
+        135deg,
+        var(--color-grad-header-footer-one) 0%,
+        var(--color-grad-header-footer-two) 100%
+    );
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    grid-area: header;
+}
+/* ===== НАВИГАЦИЯ ===== */
+.nav {
+    background: #2c3e50;
+    padding: 20px 0;
+    grid-area: nav;
+}
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.nav-item {
+    margin: 0;
+}
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+main.content {
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    grid-area: main;
+}
+
+/* ===== ФУТЕР ===== */
+.footer {
+    background: linear-gradient(
+        135deg,
+        var(--color-grad-header-footer-one) 0%,
+        var(--color-grad-header-footer-two) 100%
+    );
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+}
