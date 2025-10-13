@@ -1,31 +1,175 @@
 /* ===== БАЗОВЫЕ СТИЛИ ===== */
 
 :root {
-    --color-grad-content-one: #2c3e50;
-    --color-grad-content-two: #667eea;
+    /* Цвета */
+    --color-primary: #667eea;
+    --color-primary-dark: #4a64d6;
+    --color-secondary: #764ba2;
+    --color-accent-green: #32a151;
+    --color-accent-red: rgb(255, 40, 40);
+    --color-bg-light: #f8f9fa;
+    --color-bg-dark: #2c3e50;
+    --color-bg-gray: #e9ecef;
+    --color-header: #2c3e50;
+    --color-footer: #34495e;
+    --color-card: #fff;
+    --color-shadow: rgba(102, 126, 234, 0.3);
+    --color-shadow-skill: rgba(79, 172, 254, 0.3);
+    --color-text-main: #2c3e50;
+    --color-text-secondary: #7f8c8d;
+    --color-text-light: #fff;
+    --color-border: #e9ecef;
+    --color-border-accent: #667eea;
+    --color-required: #e74c3c;
 
-    --color-grad-header-footer-one: #2c3e50;
-    --color-grad-header-footer-two: #34495e;
+    /* Типографика */
+    --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    --font-size-xl: 32px;
+    --font-size-lg: 28px;
+    --font-size-md: 20px;
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-xs: 12px;
+    --font-size-em-lg: 1.3em;
+    --font-size-em-md: 1.1em;
+    --font-size-em-sm: 0.9em;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-bold: 600;
+
+    /* Размеры и отступы */
+    --radius-lg: 25px;
+    --radius-md: 15px;
+    --radius-sm: 8px;
+    --radius-xs: 6px;
+    --space-xl: 40px;
+    --space-lg: 30px;
+    --space-md: 20px;
+    --space-base: 16px;
+    --space-sm: 10px;
+    --space-xs: 5px;
+    /* конец переменных :root */
+}
+
+/* ===== DARK THEME VARIABLES ===== */
+[data-theme="dark"] {
+    /* Цвета для темной темы */
+    --color-primary: #7c93ff;
+    --color-primary-dark: #5a7bff;
+    --color-secondary: #9b59b6;
+    --color-accent: #ff6b6b;
+    --color-bg-light: #1a1a1a;
+    /* --color-bg-dark: #0d1117; */
+    --color-bg-gray: #21262d;
+    /* --color-header: #161b22;
+    --color-footer: #0d1117; */
+    --color-card: #21262d;
+    --color-shadow: rgba(124, 147, 255, 0.2);
+    --color-shadow-skill: rgba(124, 147, 255, 0.25);
+    --color-text-main: #e6edf3;
+    --color-text-secondary: #8b949e;
+    --color-text-light: #ffffff;
+    --color-border: #30363d;
+    --color-border-accent: #7c93ff;
+    --color-required: #ff6b6b;
+}
+
+/* Theme Toggle Styling */
+.theme-toggle {
+    position: relative;
+    display: inline-block;
+}
+
+.theme-toggle__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.theme-toggle__label {
+    display: block;
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle__slider {
+    display: block;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle__icon {
+    position: absolute;
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+}
+
+.theme-toggle__icon--sun {
+    opacity: 1;
+}
+
+.theme-toggle__icon--moon {
+    opacity: 0;
+}
+
+.theme-toggle__input:checked + .theme-toggle__label {
+    background: linear-gradient(135deg, #2c3e50, #4a6741);
+}
+
+.theme-toggle__input:checked + .theme-toggle__label .theme-toggle__slider {
+    transform: translateX(30px);
+}
+
+.theme-toggle__input:checked + .theme-toggle__label .theme-toggle__icon--sun {
+    opacity: 0;
+}
+
+.theme-toggle__input:checked + .theme-toggle__label .theme-toggle__icon--moon {
+    opacity: 1;
+}
+
+.theme-toggle__label:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-main);
     margin: 0;
     padding: 0;
     background: linear-gradient(
         135deg,
-        var(--color-grad-content-one) 0%,
-        var(--color-grad-content-two) 100%
+        var(--color-primary) 0%,
+        var(--color-secondary) 100%
     );
     min-height: 100vh;
 }
+
 /* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
-.page-container {
+.page {
     max-width: 1200px;
     margin: 0 auto;
-    background: white;
+    background: var(--color-card);
     min-height: 100vh;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 var(--space-lg) rgba(0, 0, 0, 0.1);
     display: grid;
     grid-template-rows: auto auto 1fr auto;
     grid-template-areas:
@@ -38,50 +182,62 @@ body {
 .header {
     background: linear-gradient(
         135deg,
-        var(--color-grad-header-footer-one) 0%,
-        var(--color-grad-header-footer-two) 100%
+        var(--color-header) 0%,
+        var(--color-footer) 100%
     );
-    color: white;
-    text-align: center;
-    padding: 30px;
-    font-size: 28px;
-    font-weight: 300;
-    letter-spacing: 2px;
+    color: var(--color-text-light);
+    padding: var(--space-lg);
     grid-area: header;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header__title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-light);
+    letter-spacing: 2px;
+    margin: 0;
 }
 /* ===== НАВИГАЦИЯ ===== */
 .nav {
-    background: #2c3e50;
-    padding: 20px 0;
+    background: var(--color-bg-dark);
+    padding: var(--space-md) 0;
     grid-area: nav;
 }
-.nav-list {
+.nav__list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: var(--space-lg);
 }
-.nav-item {
+.nav__item {
     margin: 0;
 }
-.nav-link {
-    color: white;
+.nav__link {
+    color: var(--color-text-light);
     text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 25px;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-lg);
     transition: all 0.3s ease;
     font-weight: 500;
 }
-.nav-link:hover {
+.nav__link:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
 }
 
 /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
-main.content {
-    padding: 40px;
+.page__content {
+    padding: var(--space-xl);
     max-width: 900px;
     margin: 0 auto;
     grid-area: main;
@@ -91,11 +247,96 @@ main.content {
 .footer {
     background: linear-gradient(
         135deg,
-        var(--color-grad-header-footer-one) 0%,
-        var(--color-grad-header-footer-two) 100%
+        var(--color-header) 0%,
+        var(--color-footer) 100%
     );
-    color: white;
+    color: var(--color-text-light);
     text-align: center;
-    padding: 30px;
-    margin-top: 50px;
+    padding: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+/* ===== МЕДИА ЗАПРОСЫ ===== */
+@media (max-width: 768px) {
+    .page {
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .header {
+        padding: var(--space-md);
+    }
+
+    .header__content {
+        flex-direction: column;
+        gap: var(--space-sm);
+        text-align: center;
+    }
+
+    .header__title {
+        font-size: var(--font-size-md);
+        letter-spacing: 1px;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        gap: var(--space-sm);
+        padding: 0 var(--space-md);
+    }
+
+    .nav__link {
+        padding: var(--space-md) var(--space-base);
+        text-align: center;
+        display: block;
+    }
+
+    .page__content {
+        padding: var(--space-md);
+    }
+
+    .footer {
+        padding: var(--space-md);
+        margin-top: var(--space-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: var(--space-base);
+    }
+
+    .header__title {
+        font-size: var(--font-size-base);
+    }
+
+    .theme-toggle__label {
+        width: 50px;
+        height: 25px;
+    }
+
+    .theme-toggle__slider {
+        width: 21px;
+        height: 21px;
+    }
+
+    .theme-toggle__icon {
+        font-size: 12px;
+    }
+
+    .theme-toggle__input:checked + .theme-toggle__label .theme-toggle__slider {
+        transform: translateX(25px);
+    }
+
+    .page__content {
+        padding: var(--space-base);
+    }
+
+    .nav__list {
+        padding: 0 var(--space-base);
+    }
+
+    .nav__link {
+        padding: var(--space-base);
+        font-size: var(--font-size-sm);
+    }
 }

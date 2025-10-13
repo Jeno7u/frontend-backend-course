@@ -1,120 +1,198 @@
 /* ===== ГЛАВНАЯ СТРАНИЦА ===== */
 
-:root {
-    --color-grad-main-one: #f8f9fa;
-    --color-grad-main-two: #e9ecef;
-
-    --color-grad-skill-one: #4facfe;
-    --color-grad-skill-two: #00f2fe;
-    --color-shadow: rgba(79, 172, 254, 0.3);
-}
-
-.profile-header {
+.profile {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: var(--space-xl);
 }
-.profile-title {
-    font-size: 32px;
-    color: #2c3e50;
-    margin-bottom: 10px;
-    font-weight: 300;
+.profile__title {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-main);
+    margin-bottom: var(--space-xs);
+    font-weight: var(--font-weight-light);
 }
-.profile-photo {
+.profile__photo {
     width: 220px;
     height: 280px;
-    border-radius: 15px;
+    border-radius: var(--radius-md);
     object-fit: cover;
-    margin: 20px auto;
-    border: 4px solid #667eea;
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    margin: var(--space-md) auto;
+    border: 4px solid var(--color-border-accent);
+    box-shadow: 0 8px 25px var(--color-shadow);
 }
-.profile-name {
-    font-size: 24px;
-    color: #2c3e50;
-    margin: 10px 0;
-    font-weight: 500;
+.profile__name {
+    font-size: var(--font-size-md);
+    color: var(--color-text-main);
+    margin: var(--space-xs) 0;
+    font-weight: var(--font-weight-bold);
 }
-.profile-group {
+.profile__group {
     font-size: 18px;
-    color: #7f8c8d;
-    margin: 5px 0;
+    color: var(--color-text-secondary);
+    margin: var(--space-xs) 0;
 }
 .about-me {
     background: linear-gradient(
         135deg,
-        var(--color-grad-main-one) 0%,
-        var(--color-grad-main-two) 100%
+        var(--color-bg-light) 0%,
+        var(--color-bg-gray) 100%
     );
-    padding: 25px;
-    border-radius: 15px;
-    margin: 30px 0;
-    border-left: 5px solid var(--color-grad-content-two);
-    font-size: 16px;
+    padding: var(--space-base);
+    border-radius: var(--radius-md);
+    margin: var(--space-lg) 0;
+    box-shadow: 0 4px 15px var(--color-shadow-skill);
+    border-left: 5px solid var(--color-border-accent);
+    font-size: var(--font-size-base);
     line-height: 1.8;
 }
+
+.about-me__title {
+    color: var(--color-text-main);
+}
+
+.about-me__desc {
+    color: var(--color-text-main);
+}
+
 /* ===== НАВЫКИ ===== */
-/* ИЗМЕНЕНИЕ: Добавили CSS Grid для навыков */
-.skills-grid {
+.skills {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    margin: 20px 0;
+    gap: var(--space-sm);
+    margin: var(--space-md) 0;
 }
-.skill-tag {
+.skills__item {
     background: linear-gradient(
         135deg,
-        var(--color-grad-skill-one) 0%,
-        var(--color-grad-skill-two) 100%
+        var(--color-primary) 0%,
+        var(--color-secondary) 100%
     );
-    color: white;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 14px;
-    box-shadow: 0 4px 15px;
+    color: var(--color-text-light);
+    padding: var(--space-base) var(--space-lg);
+    border-radius: var(--radius-lg);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-sm);
+    box-shadow: 0 4px 15px var(--color-shadow-skill);
     transition: all 0.3s ease;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: var(--space-xs);
 }
-.skill-tag:hover {
+.skills__item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px var(--color-shadow);
+    box-shadow: 0 6px 20px var(--color-shadow-skill);
 }
 /* ===== ОПЫТ РАБОТЫ ===== */
-.experience-section {
-    margin-top: 50px;
+.experience {
+    margin-top: var(--space-xl);
 }
-.section-title {
-    font-size: 28px;
-    color: #2c3e50;
+.experience__title {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-main);
     text-align: center;
-    margin-bottom: 30px;
-    font-weight: 300;
+    margin-bottom: var(--space-lg);
+    font-weight: var(--font-weight-light);
 }
-.experience-grid {
+.experience__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: var(--space-md);
 }
-.experience-card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
+.experience__item {
+    background: var(--color-card);
+    padding: var(--space-base);
+    border-radius: var(--radius-sm);
     box-shadow: 0 5px 20px var(--color-shadow);
-    border-left: 4px solid #667eea;
+    border-left: 4px solid var(--color-border-accent);
     transition: transform 0.3s ease;
 }
-.experience-card:hover {
+.experience__item:hover {
     transform: translateX(5px);
 }
-.experience-title {
-    font-size: 20px;
-    color: #2c3e50;
-    margin: 0 0 10px 0;
-    font-weight: 600;
+.experience__item-title {
+    font-size: var(--font-size-md);
+    color: var(--color-text-main);
+    margin: 0 0 var(--space-xs) 0;
+    font-weight: var(--font-weight-bold);
 }
-.experience-desc {
-    color: #7f8c8d;
+.experience__item-desc {
+    color: var(--color-text-secondary);
     line-height: 1.6;
     margin: 0;
+}
+
+/* ===== МЕДИА ЗАПРОСЫ ===== */
+@media (max-width: 768px) {
+    .profile__title {
+        font-size: var(--font-size-md);
+    }
+
+    .profile__info {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-md);
+    }
+
+    .profile__text {
+        order: 1;
+    }
+
+    .profile__image {
+        order: 2;
+        align-self: center;
+    }
+
+    .skills__title,
+    .experience__title {
+        font-size: var(--font-size-md);
+    }
+
+    .skills__list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--space-base);
+    }
+
+    .experience__list {
+        grid-template-columns: 1fr;
+        gap: var(--space-base);
+    }
+}
+
+@media (max-width: 480px) {
+    .profile__title {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--space-base);
+    }
+
+    .profile__image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile__name {
+        font-size: var(--font-size-md);
+    }
+
+    .profile__job {
+        font-size: var(--font-size-sm);
+    }
+
+    .skills__list {
+        grid-template-columns: 1fr;
+    }
+
+    .skills__item {
+        padding: var(--space-base);
+    }
+
+    .skills__title,
+    .experience__title {
+        font-size: var(--font-size-base);
+    }
+
+    .experience__item {
+        padding: var(--space-base);
+    }
+
+    .experience__item-title {
+        font-size: var(--font-size-base);
+    }
 }

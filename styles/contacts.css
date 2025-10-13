@@ -1,53 +1,50 @@
 /* ===== КОНТАКТЫ ===== */
-.contact-us-content {
+.contact {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: var(--space-lg);
     align-items: center;
     justify-content: center;
-    padding: 40px 24px;
+    padding: var(--space-xl) var(--space-base);
     max-width: 1100px;
     margin: 0 auto;
 }
-.contact-us-image {
+.contact__image {
     width: 600px;
     max-width: 100%;
-    border-radius: 18px;
+    border-radius: var(--radius-md);
     object-fit: cover;
 }
-.contact-us-form-container {
-    flex: 1;
-    min-width: 260px;
-    max-width: 420px;
-}
-.contact-us-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 32px;
-}
-.contact-us-input {
-    padding: 12px;
-    font-size: 1em;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
-.contact-us-button {
+.contact__button {
     width: 30vw;
-    padding: 12px;
-    font-size: 1em;
-    border-radius: 8px;
-    background: #667eea;
-    color: white;
+    padding: var(--space-sm);
+    font-size: var(--font-size-base);
+    border-radius: var(--radius-sm);
+    background: var(--color-primary);
+    color: var(--color-text-light);
     border: none;
     cursor: pointer;
     transition: 0.2s;
 }
-.contact-us-button:hover {
-    background: #4f5bd5;
+.contact__button:hover {
+    background: var(--color-primary-dark);
 }
-.contact-us-contacts {
-    margin-top: 24px;
+.contact__info {
+    margin-top: var(--space-base);
+}
+.contact__details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-base);
+}
+.contact__item-title {
+    font-size: var(--font-size-base);
+    color: var(--color-text-main);
+    margin-bottom: var(--space-xs);
+}
+.contact__item-text {
+    color: var(--color-text-main);
+    margin: 0;
 }
 @media (max-width: 992px) {
     .contact-us-content {
@@ -85,11 +82,11 @@ dialog::backdrop {
     background: rgba(0, 0, 0, 0.6);
     animation: fadeIn 0.3s ease;
 }
-dialog {
+.modal {
     border: none;
-    border-radius: 12px;
+    border-radius: var(--radius-sm);
     padding: 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 var(--space-sm) var(--space-lg) rgba(0, 0, 0, 0.3);
     animation: slideIn 0.3s ease;
     max-width: 500px;
     width: 90vw;
@@ -97,15 +94,19 @@ dialog {
     overflow-y: auto;
 }
 .modal-header {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    color: white;
+    background: linear-gradient(
+        135deg,
+        var(--color-header) 0%,
+        var(--color-footer) 100%
+    );
+    color: var(--color-text-light);
     padding: 1.5rem;
-    border-radius: 12px 12px 0 0;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
     margin: 0;
 }
 .modal-header h2 {
     margin: 0;
-    color: white;
+    color: var(--color-text-light);
     font-size: 1.5rem;
 }
 .modal-content {
@@ -117,17 +118,17 @@ dialog {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: #2c3e50;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-main);
 }
 .form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 2px solid #e9ecef;
-    border-radius: 6px;
-    font-size: 1rem;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-xs);
+    font-size: var(--font-size-base);
     transition: border-color 0.3s ease;
     box-sizing: border-box;
 }
@@ -135,7 +136,7 @@ dialog {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: var(--color-border-accent);
 }
 .form-group textarea {
     min-height: 100px;
@@ -150,30 +151,34 @@ dialog {
 .btn {
     padding: 0.75rem 1.5rem;
     border: none;
-    border-radius: 6px;
+    border-radius: var(--radius-xs);
     cursor: pointer;
-    font-size: 1rem;
+    font-size: var(--font-size-base);
     transition: all 0.3s ease;
-    font-weight: 600;
+    font-weight: var(--font-weight-bold);
 }
 .btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(
+        135deg,
+        var(--color-primary) 0%,
+        var(--color-secondary) 100%
+    );
+    color: var(--color-text-light);
 }
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 5px 15px var(--color-shadow);
 }
 .btn-secondary {
-    background: #f8f9fa;
-    color: #2c3e50;
-    border: 2px solid #e9ecef;
+    background: var(--color-bg-light);
+    color: var(--color-text-main);
+    border: 2px solid var(--color-border);
 }
 .btn-secondary:hover {
-    background: #e9ecef;
+    background: var(--color-bg-gray);
 }
 .required {
-    color: #e74c3c;
+    color: var(--color-required);
 }
 @keyframes fadeIn {
     from {

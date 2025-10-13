@@ -1,71 +1,98 @@
 <!DOCTYPE html>
-<html lamg="ru">
+<html lang="ru">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../styles/main.css" />
         <link rel="stylesheet" href="../styles/news.css" />
+        <script src="../scripts/main.js" defer></script>
         <title>Семестровая работа</title>
     </head>
     <body>
-        <header class="header">Хэдер</header>
-        <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Главная</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="news.html">Новости</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="goods.html">Товары</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contacts.html">Контакты</a>
-                </li>
-            </ul>
-        </nav>
-        <main class="content">
-            <div class="news-container">
-                <div class="news-card">
-                    <div class="news-image-container">
-                        <img
-                            class="news-image"
-                            src="../assets/news-1.png"
-                            alt="Фотография новости"
+        <div class="page">
+            <header class="header">
+                <div class="header__content">
+                    <h1 class="header__title">Хэдер</h1>
+                    <div class="theme-toggle">
+                        <input
+                            type="checkbox"
+                            id="theme-switch"
+                            class="theme-toggle__input"
                         />
+                        <label for="theme-switch" class="theme-toggle__label">
+                            <span class="theme-toggle__slider">
+                                <span
+                                    class="theme-toggle__icon theme-toggle__icon--sun"
+                                    >☀️</span
+                                >
+                                <span
+                                    class="theme-toggle__icon theme-toggle__icon--moon"
+                                    >🌙</span
+                                >
+                            </span>
+                        </label>
                     </div>
-                    <p class="news-label">
-                        Путин сделает важные заявления на совещании с
-                        постоянными членами Совбеза
-                    </p>
                 </div>
-                <div class="news-card">
-                    <div class="news-image-container">
-                        <img
-                            class="news-image"
-                            src="../assets/news-2.png"
-                            alt="Фотография новости"
-                        />
-                    </div>
-                    <p class="news-label">
-                        Что известно об атаке ВСУ на крымский санаторий «Форос»
-                    </p>
+            </header>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="news.html">Новости</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="goods.html">Товары</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <main class="page__content">
+                <div class="news">
+                    <article class="news__item">
+                        <div class="news__image-wrapper">
+                            <img
+                                class="news__image"
+                                src="../assets/news-1.png"
+                                alt="Фотография новости"
+                            />
+                        </div>
+                        <p class="news__title">
+                            Путин сделает важные заявления на совещании с
+                            постоянными членами Совбеза
+                        </p>
+                    </article>
+                    <article class="news__item">
+                        <div class="news__image-wrapper">
+                            <img
+                                class="news__image"
+                                src="../assets/news-2.png"
+                                alt="Фотография новости"
+                            />
+                        </div>
+                        <p class="news__title">
+                            Что известно об атаке ВСУ на крымский санаторий
+                            «Форос»
+                        </p>
+                    </article>
+                    <article class="news__item">
+                        <div class="news__image-wrapper">
+                            <img
+                                class="news__image"
+                                src="../assets/news-3.png"
+                                alt="Фотография новости"
+                            />
+                        </div>
+                        <p class="news__title">
+                            Палестина обязалась провести всеобщие выборы
+                        </p>
+                    </article>
                 </div>
-                <div class="news-card">
-                    <div class="news-image-container">
-                        <img
-                            class="news-image"
-                            src="../assets/news-3.png"
-                            alt="Фотография новости"
-                        />
-                    </div>
-                    <p class="news-label">
-                        Палестина обязалась провести всеобщие выборы
-                    </p>
-                </div>
-            </div>
-        </main>
-        <div class="footer">Футер</div>
+            </main>
+        </div>
+        <footer class="footer">Футер</footer>
     </body>
 </html>
