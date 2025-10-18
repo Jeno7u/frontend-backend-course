@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Визитка студента — Проекты</title>
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a
+                    class="navbar-brand d-flex align-items-center"
+                    href="../index.html"
+                >
+                    <span class="me-2">🎓</span>
+                    <span>Миронов Борис</span>
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="projects.html"
+                                >Проекты</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="diary.html">Дневник</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacts.html"
+                                >Контакты</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="flex-grow-1">
+            <section class="py-5">
+                <div class="container">
+                    <div
+                        class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-4"
+                    >
+                        <h1 class="h3 m-0">Мои проекты</h1>
+                        <div
+                            class="btn-group"
+                            role="group"
+                            aria-label="Фильтр по технологиям"
+                        >
+                            <button
+                                type="button"
+                                class="btn btn-outline-primary active"
+                                data-filter="all"
+                            >
+                                Все
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn-outline-primary"
+                                data-filter="html"
+                            >
+                                HTML/CSS
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn-outline-primary"
+                                data-filter="js"
+                            >
+                                JavaScript
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn-outline-primary"
+                                data-filter="react"
+                            >
+                                React
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn-outline-primary"
+                                data-filter="bootstrap"
+                            >
+                                Bootstrap
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Projects grid -->
+                    <div
+                        id="projectsGrid"
+                        class="row row-cols-1 row-cols-md-2 g-4"
+                    >
+                        <!-- Project: Личный сайт -->
+                        <div class="col project-item" data-tech="html,css">
+                            <div class="card h-100 project-card">
+                                <svg
+                                    class="bd-placeholder-img card-img-top"
+                                    width="100%"
+                                    height="180"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    role="img"
+                                    aria-label="Личный сайт"
+                                    preserveAspectRatio="xMidYMid slice"
+                                    focusable="false"
+                                >
+                                    <title>Личный сайт</title>
+                                    <rect
+                                        width="100%"
+                                        height="100%"
+                                        fill="#e9ecef"
+                                    ></rect>
+                                    <text
+                                        x="50%"
+                                        y="50%"
+                                        fill="#6c757d"
+                                        dy=".3em"
+                                        text-anchor="middle"
+                                    >
+                                        Личный сайт
+                                    </text>
+                                </svg>
+                                <div class="card-body">
+                                    <h5 class="card-title">Личный сайт</h5>
+                                    <p class="card-text">
+                                        Небольшой сайт-визитка с адаптивной
+                                        вёрсткой и базовыми анимациями.
+                                    </p>
+                                    <div class="mb-2">
+                                        <span
+                                            class="badge text-bg-secondary me-1"
+                                            >HTML</span
+                                        >
+                                        <span
+                                            class="badge text-bg-secondary me-1"
+                                            >CSS</span
+                                        >
+                                    </div>
+                                    <button
+                                        class="btn btn-sm btn-outline-primary"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                        data-title="Личный сайт"
+                                        data-desc="Проект-визитка. Реализована семантическая вёрстка, адаптивность, базовые анимации."
+                                        data-tech="HTML, CSS"
+                                        data-live="#"
+                                        data-code="#"
+                                    >
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project: Todo-приложение -->
+                        <div class="col project-item" data-tech="js">
+                            <div class="card h-100 project-card">
+                                <svg
+                                    class="bd-placeholder-img card-img-top"
+                                    width="100%"
+                                    height="180"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    role="img"
+                                    aria-label="Todo-приложение"
+                                    preserveAspectRatio="xMidYMid slice"
+                                    focusable="false"
+                                >
+                                    <title>Todo-приложение</title>
+                                    <rect
+                                        width="100%"
+                                        height="100%"
+                                        fill="#e9ecef"
+                                    ></rect>
+                                    <text
+                                        x="50%"
+                                        y="50%"
+                                        fill="#6c757d"
+                                        dy=".3em"
+                                        text-anchor="middle"
+                                    >
+                                        Todo-приложение
+                                    </text>
+                                </svg>
+                                <div class="card-body">
+                                    <h5 class="card-title">Todo-приложение</h5>
+                                    <p class="card-text">
+                                        Задачник с добавлением, удалением и
+                                        фильтрацией задач на чистом JS.
+                                    </p>
+                                    <div class="mb-2">
+                                        <span
+                                            class="badge text-bg-secondary me-1"
+                                            >JavaScript</span
+                                        >
+                                    </div>
+                                    <button
+                                        class="btn btn-sm btn-outline-primary"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                        data-title="Todo-приложение"
+                                        data-desc="Классический TODO-лист: локальное хранение, фильтры, счётчики, UI на Bootstrap."
+                                        data-tech="JavaScript"
+                                        data-live="#"
+                                        data-code="#"
+                                    >
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project: Интернет-магазин (React) -->
+                        <div class="col project-item" data-tech="react,js">
+                            <div class="card h-100 project-card">
+                                <svg
+                                    class="bd-placeholder-img card-img-top"
+                                    width="100%"
+                                    height="180"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    role="img"
+                                    aria-label="Интернет-магазин (React)"
+                                    preserveAspectRatio="xMidYMid slice"
+                                    focusable="false"
+                                >
+                                    <title>Интернет-магазин (React)</title>
+                                    <rect
+                                        width="100%"
+                                        height="100%"
+                                        fill="#e9ecef"
+                                    ></rect>
+                                    <text
+                                        x="50%"
+                                        y="50%"
+                                        fill="#6c757d"
+                                        dy=".3em"
+                                        text-anchor="middle"
+                                    >
+                                        Интернет-магазин (React)
+                                    </text>
+                                </svg>
+                                <div class="card-body">
+                                    <h5 class="card-title">Интернет-магазин</h5>
+                                    <p class="card-text">
+                                        Каталог товаров, корзина, поиск и
+                                        фильтры. Состояние на React hooks.
+                                    </p>
+                                    <div class="mb-2">
+                                        <span
+                                            class="badge text-bg-secondary me-1"
+                                            >React</span
+                                        >
+                                        <span
+                                            class="badge text-bg-secondary me-1"
+                                            >JavaScript</span
+                                        >
+                                    </div>
+                                    <button
+                                        class="btn btn-sm btn-outline-primary"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                        data-title="Интернет-магазин (React)"
+                                        data-desc="Учебный e-commerce: карточки, корзина, фильтры, поиск, разбиение на компоненты."
+                                        data-tech="React, JavaScript"
+                                        data-live="#"
+                                        data-code="#"
+                                    >
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project: Портфолио (Bootstrap) -->
+                        <div
+                            class="col project-item"
+                            data-tech="bootstrap,html,css"
+                        >
+                            <div class="card h-100 project-card">
+                                <svg
+                                    class="bd-placeholder-img card-img-top"
+                                    width="100%"
+                                    height="180"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    role="img"
+                                    aria-label="Портфолио (Bootstrap)"
+                                    preserveAspectRatio="xMidYMid slice"
+                                    focusable="false"
+                                >
+                                    <title>Портфолио (Bootstrap)</title>
+                                    <rect
+                                        width="100%"
+                                        height="100%"
+                                        fill="#e9ecef"
+                                    ></rect>
+                                    <text
+                                        x="50%"
+                                        y="50%"
+                                        fill="#6c757d"
+                                        dy=".3em"
+                                        text-anchor="middle"
+                                    >
+                                        Портфолио (Bootstrap)
+                                    </text>
+                                </svg>
+                                <div class="card-body">
+                                    <h5 class="card-title">Портфолио</h5>
+                                    <p class="card-text">
+                                        Сайт-портфолио на Bootstrap с
+                                        компонентами и сеткой.
+                                    </p>
+                                    <div class="mb-2">
+                                        <span
+                                            class="badge text-bg-secondary me-1"
+                                            >Bootstrap</span
+                                        >
+                                        <span
+                                            class="badge text-bg-secondary me-1"
+                                            >HTML</span
+                                        >
+                                        <span
+                                            class="badge text-bg-secondary me-1"
+                                            >CSS</span
+                                        >
+                                    </div>
+                                    <button
+                                        class="btn btn-sm btn-outline-primary"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                        data-title="Портфолио (Bootstrap)"
+                                        data-desc="Адаптивный сайт-портфолио с использованием компонентов Bootstrap: navbar, cards, модальные окна."
+                                        data-tech="Bootstrap, HTML, CSS"
+                                        data-live="#"
+                                        data-code="#"
+                                    >
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-dark text-light text-center py-4 mt-auto">
+            <div class="container">© 2024 Контакты</div>
+        </footer>
+
+        <!-- Project Modal -->
+        <div
+            class="modal fade"
+            id="projectModal"
+            tabindex="-1"
+            aria-labelledby="projectModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectModalLabel">
+                            Детали проекта
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <div
+                            class="ratio ratio-16x9 bg-body-secondary rounded mb-3"
+                        ></div>
+                        <p id="projectModalDesc" class="mb-3">
+                            Описание проекта.
+                        </p>
+                        <div
+                            id="projectModalTech"
+                            class="mb-3 d-flex flex-wrap gap-2"
+                        ></div>
+                        <div id="projectModalLinks" class="d-flex gap-2">
+                            <a
+                                id="projectLiveLink"
+                                class="btn btn-primary btn-sm d-none"
+                                href="#"
+                                target="_blank"
+                                rel="noopener"
+                                >Живая версия</a
+                            >
+                            <a
+                                id="projectCodeLink"
+                                class="btn btn-outline-secondary btn-sm d-none"
+                                href="#"
+                                target="_blank"
+                                rel="noopener"
+                                >Исходный код</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap JS Bundle -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- Inline JS: filters + modal population -->
+        <script>
+            // Filtering logic
+            document.addEventListener("DOMContentLoaded", () => {
+                const filterButtons =
+                    document.querySelectorAll("[data-filter]");
+                const items = document.querySelectorAll(".project-item");
+
+                filterButtons.forEach((btn) => {
+                    btn.addEventListener("click", () => {
+                        filterButtons.forEach((b) =>
+                            b.classList.remove("active")
+                        );
+                        btn.classList.add("active");
+
+                        const filter = btn.getAttribute("data-filter");
+                        items.forEach((item) => {
+                            const techs = (
+                                item.getAttribute("data-tech") || ""
+                            ).toLowerCase();
+                            if (filter === "all" || techs.includes(filter)) {
+                                item.classList.remove("d-none");
+                            } else {
+                                item.classList.add("d-none");
+                            }
+                        });
+                    });
+                });
+            });
+
+            // Modal population using Bootstrap events
+            const projectModalEl = document.getElementById("projectModal");
+            if (projectModalEl) {
+                projectModalEl.addEventListener("show.bs.modal", (event) => {
+                    const button = event.relatedTarget;
+                    if (!button) return;
+
+                    const title =
+                        button.getAttribute("data-title") || "Детали проекта";
+                    const desc = button.getAttribute("data-desc") || "";
+                    const tech = button.getAttribute("data-tech") || "";
+                    const live = button.getAttribute("data-live") || "";
+                    const code = button.getAttribute("data-code") || "";
+
+                    const titleEl =
+                        projectModalEl.querySelector("#projectModalLabel");
+                    const descEl =
+                        projectModalEl.querySelector("#projectModalDesc");
+                    const techEl =
+                        projectModalEl.querySelector("#projectModalTech");
+                    const liveEl =
+                        projectModalEl.querySelector("#projectLiveLink");
+                    const codeEl =
+                        projectModalEl.querySelector("#projectCodeLink");
+
+                    if (titleEl) titleEl.textContent = title;
+                    if (descEl) descEl.textContent = desc;
+
+                    if (techEl) {
+                        techEl.innerHTML = "";
+                        tech.split(",")
+                            .map((s) => s.trim())
+                            .filter(Boolean)
+                            .forEach((t) => {
+                                const span = document.createElement("span");
+                                span.className = "badge text-bg-secondary";
+                                span.textContent = t;
+                                techEl.appendChild(span);
+                            });
+                    }
+
+                    // Links visibility
+                    if (liveEl) {
+                        if (live && live !== "#") {
+                            liveEl.classList.remove("d-none");
+                            liveEl.href = live;
+                        } else {
+                            liveEl.classList.add("d-none");
+                            liveEl.removeAttribute("href");
+                        }
+                    }
+                    if (codeEl) {
+                        if (code && code !== "#") {
+                            codeEl.classList.remove("d-none");
+                            codeEl.href = code;
+                        } else {
+                            codeEl.classList.add("d-none");
+                            codeEl.removeAttribute("href");
+                        }
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
