@@ -102,16 +102,23 @@
                             <button
                                 type="button"
                                 class="btn btn-outline-primary"
-                                data-filter="react"
+                                data-filter="bootstrap"
                             >
-                                React
+                                Bootstrap
                             </button>
                             <button
                                 type="button"
                                 class="btn btn-outline-primary"
-                                data-filter="bootstrap"
+                                data-filter="python"
                             >
-                                Bootstrap
+                                Python
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn-outline-primary"
+                                data-filter="c++"
+                            >
+                                C++
                             </button>
                         </div>
                     </div>
@@ -122,7 +129,10 @@
                         class="row row-cols-1 row-cols-md-2 g-4"
                     >
                         <!-- Project: Личный сайт -->
-                        <div class="col project-item" data-tech="html,css">
+                        <div
+                            class="col project-item"
+                            data-tech="html,css,js,bootstrap"
+                        >
                             <div class="card h-100 project-card">
                                 <img
                                     src="../images/personal-website-1.png"
@@ -150,6 +160,10 @@
                                         >
                                         <span
                                             class="badge text-bg-secondary me-1"
+                                            >JavaScript</span
+                                        >
+                                        <span
+                                            class="badge text-bg-secondary me-1"
                                             >Bootstrap</span
                                         >
                                     </div>
@@ -159,10 +173,9 @@
                                         data-bs-target="#projectModal"
                                         data-title="Личный сайт"
                                         data-desc="Проект-визитка. Реализована семантическая вёрстка, адаптивность, базовые анимации."
-                                        data-tech="HTML, CSS"
                                         data-live="#"
                                         data-code="#"
-                                        data-images="../images/personal-website-1.png"
+                                        data-images="../images/personal-website-1.png, ../images/personal-website-2.png, ../images/personal-website-3.png, ../images/personal-website-4.png"
                                     >
                                         Подробнее
                                     </button>
@@ -171,7 +184,7 @@
                         </div>
 
                         <!-- Project: Tetris -->
-                        <div class="col project-item" data-tech="js">
+                        <div class="col project-item" data-tech="c++,qt">
                             <div class="card h-100 project-card">
                                 <img
                                     src="../images/tetris-1.png"
@@ -202,11 +215,11 @@
                                         data-bs-toggle="modal"
                                         data-bs-target="#projectModal"
                                         data-title="Tetris"
-                                        data-desc="Игра Тетрис с полноценным игровым процессом."
-                                        data-tech="C++, Qt"
+                                        data-desc="Игра Тетрис, созданная в качестве курсовой работы. Имеет полноценный геймплей и основной функционал"
                                         data-live="#"
                                         data-code="#"
                                         data-images="../images/tetris-1.png, ../images/tetris-2.png, ../images/tetris-3.gif"
+                                        data-link="https://github.com/Jeno7u/Tetris"
                                     >
                                         Подробнее
                                     </button>
@@ -215,7 +228,10 @@
                         </div>
 
                         <!-- Project: microservices -->
-                        <div class="col project-item" data-tech="react,js">
+                        <div
+                            class="col project-item"
+                            data-tech="python,fastapi, docker, postgresql,grafana,loki,jwt"
+                        >
                             <div class="card h-100 project-card">
                                 <img
                                     src="../images/microservices-1.png"
@@ -266,12 +282,13 @@
                                         class="btn btn-sm btn-outline-primary"
                                         data-bs-toggle="modal"
                                         data-bs-target="#projectModal"
-                                        data-title="Интернет-магазин (React)"
-                                        data-desc="Учебный e-commerce: карточки, корзина, фильтры, поиск, разбиение на компоненты."
-                                        data-tech="React, JavaScript"
+                                        data-title="Microservice Notes REST API"
+                                        data-desc="Микросервисное REST API для создания,
+                                        хранения и использование заметок. Есть встроенная swagger документация, удобные метрики и логи"
                                         data-live="#"
                                         data-code="#"
-                                        data-images="../images/microservices-1.png"
+                                        data-images="../images/microservices-1.png, ../images/microservices-2.png, ../images/microservices-3.png"
+                                        data-link="https://github.com/Jeno7u/microservices-notes-api"
                                     >
                                         Подробнее
                                     </button>
@@ -311,7 +328,6 @@
                                         data-bs-target="#projectModal"
                                         data-title="DownJutsu"
                                         data-desc="Приложение-скрапер для скачивания аниме с сайта https://jut.su. Это мой первый проект, на который я потратил довольно много времени. Он был создан в качестве индивидуального проекта ещё в 10 классе. \n\nОно позволяет скачивать сериалы/фильмы, выбирать разрешение и место для скачивания файлов. Также на странице установки можно прочитать краткую информацию о том, что вы собираетесь скачать и какие сезоны/фильмы доступны для скачивания."
-                                        data-tech="Python, PyQt"
                                         data-live="#"
                                         data-code="#"
                                         data-images="../images/down-jutsu-1.png, ../images/down-jutsu-2.png"
@@ -328,7 +344,7 @@
         </main>
 
         <footer class="bg-dark text-light text-center py-4 mt-auto">
-            <div class="container">© 2024 Контакты</div>
+            <div class="container">© 2025 Контакты</div>
         </footer>
 
         <!-- Project Modal -->
