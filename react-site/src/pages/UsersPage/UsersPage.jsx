@@ -9,9 +9,11 @@ export default function UsersPage() {
     const [modalOpen, setModalOpen] = useState(false);
     const [modalMode, setModalMode] = useState("create"); // create | edit
     const [editingProduct, setEditingProduct] = useState(null);
+
     useEffect(() => {
         loadProducts();
     }, []);
+
     const loadProducts = async () => {
         try {
             setLoading(true);
@@ -24,6 +26,7 @@ export default function UsersPage() {
             setLoading(false);
         }
     };
+
     const openCreate = () => {
         setModalMode("create");
         setEditingProduct(null);

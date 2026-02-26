@@ -7,9 +7,30 @@ const express = require("express");
 const router = express.Router();
 
 let goods = [
-    { id: 1, name: "Стул обычный", price: 184 },
-    { id: 2, name: "Стул маленький", price: 318 },
-    { id: 3, name: "Стул большой", price: 205 },
+    {
+        id: 1,
+        name: "Стул обычный",
+        category: "Мебель",
+        description: "Не, ну прикольный",
+        price: 184,
+        stock: 12,
+    },
+    {
+        id: 2,
+        name: "Стул маленький",
+        category: "Мебель",
+        description: "Не, ну прикольный",
+        price: 318,
+        stock: 13,
+    },
+    {
+        id: 3,
+        name: "Стул большой",
+        category: "Мебель",
+        description: "Не, ну сойдет",
+        price: 205,
+        stock: 8,
+    },
 ];
 
 router.get("/", (req, res) => {
