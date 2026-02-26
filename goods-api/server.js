@@ -15,6 +15,27 @@ const productsRouter = require("./routes/users");
 app.use("/api/goods", goodsRouter);
 app.use("/api/products", productsRouter);
 
+const swaggerOptions = {
+    definition: {
+        openapi: "3.0.0",
+        info: {
+            title: "API управления пользователями",
+            version: "1.0.0",
+            description: "Простое API для управления пользователями",
+        },
+        servers: [
+            {
+                url: `http://localhost:3000`,
+                description: "Локальный сервер",
+            },
+        ],
+    },
+    apis: ["./routes/goods.js"],
+};
+
+const swaggerSpec = swaggerJsdoc(swaggerOptions);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 // Запуск сервера
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
