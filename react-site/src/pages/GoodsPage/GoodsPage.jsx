@@ -58,13 +58,8 @@ export default function GoodsPage() {
                 const newProduct = await api.createProduct(payload);
                 setProducts((prev) => [...prev, newProduct]);
             } else {
-                const updatedProduct = await api.updateProduct(
-                    payload.id,
-                    payload,
-                );
-                setProducts((prev) =>
-                    prev.map((p) => (p.id === payload.id ? updatedProduct : p)),
-                );
+                await api.updateProduct(payload.id, payload);
+                await loadProducts();
             }
             closeModal();
         } catch (err) {
