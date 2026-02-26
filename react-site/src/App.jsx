@@ -1,9 +1,9 @@
-import UsersPage from "./pages/UsersPage/UsersPage";
+import GoodsPage from "./pages/GoodsPage/GoodsPage";
 
 function App() {
     return (
         <div className="App">
-            <UsersPage />
+            <GoodsPage />
         </div>
     );
 }

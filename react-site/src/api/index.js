@@ -20,7 +20,7 @@ export const api = {
         return response.data;
     },
     updateProduct: async (id, product) => {
-        let response = await apiClient.patch(`/goods/${id}`, product);
+        let response = await apiClient.put(`/goods/${id}`, product);
         return response.data;
     },
     deleteProduct: async (id) => {

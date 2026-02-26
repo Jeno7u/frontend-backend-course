@@ -1,11 +1,11 @@
 import React from "react";
-export default function UserItem({ user: product, onEdit, onDelete }) {
+export default function ProductItem({ product, onEdit, onDelete }) {
     return (
-        <div className="userRow">
-            <div className="userMain">
-                <div className="userId">#{product.id}</div>
-                <div className="userName">{product.name}</div>
-                <div className="userAge">{product.category}</div>
+        <div className="productRow">
+            <div className="productMain">
+                <div className="productId">#{product.id}</div>
+                <div className="productName">{product.name}</div>
+                <div className="productCategory">{product.category}</div>
                 <div style={{ opacity: 0.75, fontSize: "13px" }}>
                     {product.description}
                 </div>
@@ -19,7 +19,7 @@ export default function UserItem({ user: product, onEdit, onDelete }) {
                         Склад: {product.stock}
                     </div>
                 </div>
-                <div className="userActions">
+                <div className="productActions">
                     <button className="btn" onClick={() => onEdit(product)}>
                         Редактировать
                     </button>

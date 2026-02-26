@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-export default function UserModal({
+export default function ProductModal({
     open,
     mode,
-    initialUser: initialProduct,
+    initialProduct,
     onClose,
     onSubmit,
 }) {

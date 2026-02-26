@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./UsersPage.scss";
-import UsersList from "../../components/UsersList";
-import UserModal from "../../components/UserModal";
+import "./GoodsPage.scss";
+import GoodsList from "../../components/GoodsList";
+import ProductModal from "../../components/ProductModal";
 import { api } from "../../api";
-export default function UsersPage() {
+export default function GoodsPage() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [modalOpen, setModalOpen] = useState(false);
@@ -94,8 +94,8 @@ export default function UsersPage() {
                     {loading ? (
                         <div className="empty">Загрузка...</div>
                     ) : (
-                        <UsersList
-                            users={products}
+                        <GoodsList
+                            products={products}
                             onEdit={openEdit}
                             onDelete={handleDelete}
                         />
@@ -107,10 +107,10 @@ export default function UsersPage() {
                     © {new Date().getFullYear()} Интернет-магазин
                 </div>
             </footer>
-            <UserModal
+            <ProductModal
                 open={modalOpen}
                 mode={modalMode}
-                initialUser={editingProduct}
+                initialProduct={editingProduct}
                 onClose={closeModal}
                 onSubmit={handleSubmitModal}
             />
