@@ -1,0 +1,124 @@
+.authPage {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background:
+        radial-gradient(circle at 20% 20%, #2b1d58 0%, #0b0f19 45%),
+        linear-gradient(135deg, #0b0f19 0%, #121b2f 100%);
+    color: #e9ecf6;
+}
+
+.authCard {
+    width: 100%;
+    max-width: 460px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    background: rgba(15, 21, 38, 0.92);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+    padding: 20px;
+}
+
+.authTitle {
+    margin: 0;
+    font-size: 28px;
+}
+
+.authSubtitle {
+    margin: 8px 0 18px;
+    opacity: 0.8;
+}
+
+.authHint {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.authQuick {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.authQuickBtn {
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.05);
+    color: inherit;
+    cursor: pointer;
+}
+
+.authTabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.authTab {
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.authTab--active {
+    border-color: rgba(100, 120, 255, 0.85);
+    background: rgba(100, 120, 255, 0.2);
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.authLabel {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.authInput {
+    height: 42px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    color: inherit;
+    padding: 0 12px;
+}
+
+.authError {
+    border: 1px solid rgba(239, 68, 68, 0.55);
+    background: rgba(239, 68, 68, 0.12);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.authSubmit {
+    margin-top: 4px;
+    height: 42px;
+    border-radius: 10px;
+    border: 1px solid rgba(100, 120, 255, 0.8);
+    background: rgba(100, 120, 255, 0.25);
+    color: inherit;
+    cursor: pointer;
+}
+
+.authSubmit:disabled {
+    opacity: 0.65;
+    cursor: default;
+}

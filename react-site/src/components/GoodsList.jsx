@@ -1,6 +1,13 @@
 import React from "react";
 import ProductItem from "./ProductItem";
-export default function GoodsList({ products, onEdit, onDelete }) {
+export default function GoodsList({
+    products,
+    onView,
+    onEdit,
+    onDelete,
+    canEdit,
+    canDelete,
+}) {
     if (!products.length) {
         return <div className="empty">Товаров пока нет</div>;
     }
@@ -10,8 +17,11 @@ export default function GoodsList({ products, onEdit, onDelete }) {
                 <ProductItem
                     key={p.id}
                     product={p}
+                    onView={onView}
                     onEdit={onEdit}
                     onDelete={onDelete}
+                    canEdit={canEdit}
+                    canDelete={canDelete}
                 />
             ))}
         </div>

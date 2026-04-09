@@ -9,19 +9,21 @@ app.use(cors());
 app.use(express.json());
 app.use(logging);
 
-const goodsRouter = require("./routes/goods");
-const productsRouter = require("./routes/users");
+const authRouter = require("./routes/auth");
+const productsRouter = require("./routes/products");
+const usersRouter = require("./routes/users");
 
-app.use("/api/goods", goodsRouter);
+app.use("/api/auth", authRouter);
 app.use("/api/products", productsRouter);
+app.use("/api/users", usersRouter);
 
 const swaggerOptions = {
     definition: {
         openapi: "3.0.0",
         info: {
-            title: "API управления пользователями",
+            title: "Goods API",
             version: "1.0.0",
-            description: "Простое API для управления пользователями",
+            description: "API для регистрации, логина и управления товарами",
         },
         servers: [
             {
@@ -30,7 +32,7 @@ const swaggerOptions = {
             },
         ],
     },
-    apis: ["./routes/goods.js"],
+    apis: ["./routes/auth.js", "./routes/products.js", "./routes/users.js"],
 };
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions);

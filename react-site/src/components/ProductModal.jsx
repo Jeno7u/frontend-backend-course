@@ -6,33 +6,33 @@ export default function ProductModal({
     onClose,
     onSubmit,
 }) {
-    const [name, setName] = useState("");
+    const [productTitle, setProductTitle] = useState("");
     const [category, setCategory] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
-    const [stock, setStock] = useState("");
+
     useEffect(() => {
         if (!open) return;
-        setName(initialProduct?.name ?? "");
+        setProductTitle(initialProduct?.title ?? "");
         setCategory(initialProduct?.category ?? "");
         setDescription(initialProduct?.description ?? "");
         setPrice(
             initialProduct?.price != null ? String(initialProduct.price) : "",
         );
-        setStock(
-            initialProduct?.stock != null ? String(initialProduct.stock) : "",
-        );
     }, [open, initialProduct]);
+
     if (!open) return null;
-    const title = mode === "edit" ? "Редактирование товара" : "Создание товара";
+
+    const modalTitle =
+        mode === "edit" ? "Редактирование товара" : "Создание товара";
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        const trimmedName = name.trim();
+        const trimmedTitle = productTitle.trim();
         const trimmedCategory = category.trim();
         const trimmedDesc = description.trim();
         const parsedPrice = Number(price);
-        const parsedStock = Number(stock);
-        if (!trimmedName) {
+        if (!trimmedTitle) {
             alert("Введите название товара");
             return;
         }
@@ -48,19 +48,16 @@ export default function ProductModal({
             alert("Введите корректную цену");
             return;
         }
-        if (!Number.isFinite(parsedStock) || parsedStock < 0) {
-            alert("Введите корректное количество на складе");
-            return;
-        }
+
         onSubmit({
             id: initialProduct?.id,
-            name: trimmedName,
+            title: trimmedTitle,
             category: trimmedCategory,
             description: trimmedDesc,
             price: parsedPrice,
-            stock: parsedStock,
         });
     };
+
     return (
         <div className="backdrop" onMouseDown={onClose}>
             <div
@@ -70,7 +67,7 @@ export default function ProductModal({
                 aria-modal="true"
             >
                 <div className="modal__header">
-                    <div className="modal__title">{title}</div>
+                    <div className="modal__title">{modalTitle}</div>
                     <button
                         className="iconBtn"
                         onClick={onClose}
@@ -84,8 +81,8 @@ export default function ProductModal({
                         Название товара
                         <input
                             className="input"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
+                            value={productTitle}
+                            onChange={(e) => setProductTitle(e.target.value)}
                             placeholder="Например, Кресло офисное"
                             autoFocus
                         />
@@ -117,16 +114,6 @@ export default function ProductModal({
                             value={price}
                             onChange={(e) => setPrice(e.target.value)}
                             placeholder="Например, 4500"
-                            inputMode="numeric"
-                        />
-                    </label>
-                    <label className="label">
-                        Количество на складе
-                        <input
-                            className="input"
-                            value={stock}
-                            onChange={(e) => setStock(e.target.value)}
-                            placeholder="Например, 12"
                             inputMode="numeric"
                         />
                     </label>

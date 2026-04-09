@@ -67,6 +67,31 @@ $dangerBg: rgba(239, 68, 68, 0.12);
         font-size: 20px;
     }
 }
+
+.sectionNav {
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    margin-bottom: 14px;
+}
+
+.sectionBtn {
+    height: 36px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: transparent;
+    color: inherit;
+    padding: 0 12px;
+    cursor: pointer;
+}
+
+.sectionBtn--active {
+    background: rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.55);
+}
 // ===== Buttons =====
 .btn {
     padding: 8px 10px;
@@ -102,6 +127,18 @@ $dangerBg: rgba(239, 68, 68, 0.12);
     justify-content: space-between;
     gap: 12px;
     padding: 12px;
+}
+
+.productRow--clickable {
+    cursor: pointer;
+    transition:
+        border-color 0.18s ease,
+        transform 0.18s ease;
+
+    &:hover {
+        border-color: rgba(99, 102, 241, 0.55);
+        transform: translateY(-1px);
+    }
 }
 .productMain {
     display: flex;
@@ -196,4 +233,62 @@ $dangerBg: rgba(239, 68, 68, 0.12);
     background: rgba(255, 255, 255, 0.04);
     color: inherit;
     outline: none;
+}
+
+.detailsGrid {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 8px 12px;
+}
+
+.detailsLabel {
+    opacity: 0.75;
+    font-size: 13px;
+}
+
+.usersList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.userRow {
+    @include card(12px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px;
+}
+
+.userMain {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.userId,
+.userMeta {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.userName {
+    font-weight: 600;
+}
+
+.userBlocked {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: rgba(239, 68, 68, 0.14);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    font-size: 12px;
+}
+
+.userActions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
